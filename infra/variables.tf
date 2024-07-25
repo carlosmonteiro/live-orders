@@ -65,3 +65,7 @@ variable "s3_env_vars_file_arn" {
 variable "docker_image_name" {
   default = "nginx:latest"
 }
+
+variable "name_bucket" {
+  default = "live-orders-327498361889"
+}

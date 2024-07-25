@@ -14,6 +14,7 @@ resource "aws_ecs_task_definition" "ecs_task" {
   memory                   = var.memory # Available memory for the task
   execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
   task_role_arn            = aws_iam_role.ecs_task_execution_role.arn
+  depends_on               = [aws_s3_bucket.live_orders_bucket]
 
   container_definitions = jsonencode([
     {
