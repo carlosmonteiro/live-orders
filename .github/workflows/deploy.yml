@@ -12,7 +12,7 @@ env:
 
 jobs:
   build-infra:
-    name: terraform-ci-cd
+    name: live-orders-ci-cd
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,5 +33,5 @@ jobs:
         working-directory: ./infra
       - name: Terraform Apply
         id: apply
-        run: terraform apply --auto-approve
+        run: terraform destroy --auto-approve
         working-directory: ./infra
